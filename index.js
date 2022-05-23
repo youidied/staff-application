@@ -44,15 +44,7 @@ const commands = [];
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-process.on("unhandledRejection", error => {
-  return console.error(error);
-});
-process.on("unhandledRejection", error => {
-  return console.error(error);
-});
-process.on("unhandledRejection", error => {
-  return console.error(error);
-});
+
 // ready end 
 
 const commandlol = new SlashCommandBuilder().setName("staff-application").setDescription("send staff application embed").addStringOption(option =>
