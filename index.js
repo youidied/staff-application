@@ -1,12 +1,12 @@
 //config 
-const clientId = '967733244982337566'
+const clientId = ''//ايدي بوتك
 const staffids = ["id1", "id2", "id3", "id4"]//ايديات الستف
-const q1 = "اسمك"//السوال الاول
-const q2 = "عمؤك"//السوال الثاني
-const q3 = "سنك"//السوال الثالث
-const q4 = "يدك"//السوال الرابع
-const q5 = "طولك"//السوال الخامس
-const logchnl = "965658014453473331"//ايدي روم اللوج
+const q1 = ""//السوال الاول
+const q2 = ""//السوال الثاني
+const q3 = ""
+const q4 = ""//السوال الرابع
+const q5 = ""//السوال الخامس
+const logchnl = ""//ايدي روم اللوج
 
 // config end 
 const express = require('express');
@@ -129,11 +129,16 @@ client.on('interactionCreate', async interaction => {
 					.setLabel('Primary')
 					.setStyle('PRIMARY'),
 			);
+    if (staffids.includes(interaction.member.id)) {
       await interaction.deferReply({ephemeral: true })
       await wait(2000)
       await interaction.editReply({content  : "DONE"})
       await interaction.followUp({embeds: [Embed], components: [row]});
-  
+  }else {
+    await interaction.deferReply({ephemeral: true })
+    await wait(2000)
+    await interaction.editReply({content  : "NO PERM :)"})
+  }
 	}
 });
 client.on('interactionCreate', async interaction => {
